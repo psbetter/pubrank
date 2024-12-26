@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Conference {
+  id    Int     @id @default(autoincrement())
+  abbreviation String
+  status String
+  deadline DateTime
+  meetingDate String
+  address String
+  fullName String
+  url String
+  publisher String
+  rank String
+  domain String @default("")
+}
+
+model Journal {
+  id    Int     @id @default(autoincrement())
+  abbreviation String
+  fullName String
+  url String
+  imapctFactor Float
+  rank String
+  domain String @default("")
+}

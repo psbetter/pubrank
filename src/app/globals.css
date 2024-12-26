@@ -19,3 +19,24 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* 设置滚动条整体样式 */
+#table_scrollbar::-webkit-scrollbar {
+  width: 8px; /* 滚动条宽度 */
+  height: 8px;
+  background-color: #fffcfc; /* 滚动条背景色 */
+  border-radius: 6px; /* 拖拽块圆角 */
+}
+
+/* 设置滚动条拖拽块样式 */
+#table_scrollbar::-webkit-scrollbar-thumb {
+  background-color: #dfdddd; /* 拖拽块背景色 */
+  width: 8px; /* 滚动条宽度 */
+  height: 8px;
+  border-radius: 6px; /* 拖拽块圆角 */
+}
+
+/* 可选：设置滚动条拖拽块hover样式 */
+#table_scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #9e9d9d; /* 拖拽块hover背景色 */
+}
