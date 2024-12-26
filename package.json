@@ -11,7 +11,6 @@
     "lint": "next lint",
     "prepare": "husky",
     "test": "echo \"test passed\"",
-    "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0  -n ./changelog-option.js",
     "commit": "cz",
     "release": "commit-and-tag-version"
   },
@@ -38,9 +37,6 @@
     "commit-and-tag-version": "^12.5.0",
     "commitizen": "^4.3.1",
     "compare-func": "^2.0.0",
-    "conventional-changelog": "^6.0.0",
-    "conventional-changelog-cli": "^5.0.0",
-    "conventional-changelog-custom-config": "^0.3.1",
     "cz-customizable": "^7.4.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.2",
