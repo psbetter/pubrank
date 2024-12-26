@@ -1,6 +1,6 @@
 {
   "name": "pubrank",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,7 +12,8 @@
     "prepare": "husky",
     "test": "echo \"test passed\"",
     "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0  -n ./changelog-option.js",
-    "commit": "cz"
+    "commit": "cz",
+    "release": "commit-and-tag-version"
   },
   "config": {
     "commitizen": {
@@ -34,6 +35,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "commit-and-tag-version": "^12.5.0",
     "commitizen": "^4.3.1",
     "compare-func": "^2.0.0",
     "conventional-changelog": "^6.0.0",
