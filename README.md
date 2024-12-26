@@ -1,18 +1,22 @@
 Pubrank是一个论文投稿信息汇总平台。
 
 ## Getting Started
+将项目根目录```.env.example```文件命名改为```.env```
 
-命令介绍
+按顺序执行
 
 ```bash
 # 安装
 pnpm i
-# 运行
-pnpm dev
-# 打包
-pnpm build
 # 数据迁移
 pnpm migrate
+# 运行
+pnpm dev
+```
+可选命令
+```bash
+# 打包
+pnpm build
 # prisma后台启动
 pnpm admin
 # 代码检验

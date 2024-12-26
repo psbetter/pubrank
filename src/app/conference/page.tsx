@@ -2,7 +2,7 @@ import React from 'react';
 import Table from "@/components/Table";
 import { classNames } from "@/utils/condition_class";
 import prisma from '@/lib/prisma';
-import * as dayjs from 'dayjs'
+import dayjs from 'dayjs';
 
 export default async function ConferenceTable() {
     const columns = [

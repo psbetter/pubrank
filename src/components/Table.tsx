@@ -40,7 +40,7 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
                                                 key={colIndex}
                                                 className={classNames(
                                                     'whitespace-nowrap px-3 py-4 text-sm',
-                                                    col.className
+                                                    col.className || ''
                                                 )}
                                             >
                                                 {col.render
