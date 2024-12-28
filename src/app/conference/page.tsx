@@ -64,7 +64,7 @@ export default async function ConferenceTable() {
         { name: '全称', key: 'fullName' },
     ];
     const conference = await prisma.conference.findMany();
-    const conferenceData = conference.map((item) => {
+    const conferenceData = conference.map((item: any) => {
         const deadline = dayjs(item.deadline);
         const today = dayjs();
         let status = '未开始';  // 默认状态为 '未开始'
