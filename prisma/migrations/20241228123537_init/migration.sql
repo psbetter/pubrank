@@ -2,22 +2,23 @@
 CREATE TABLE "Conference" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "abbreviation" TEXT NOT NULL,
-    "status" TEXT NOT NULL,
     "deadline" DATETIME NOT NULL,
     "meetingDate" TEXT NOT NULL,
     "address" TEXT NOT NULL,
     "fullName" TEXT NOT NULL,
     "url" TEXT NOT NULL,
     "publisher" TEXT NOT NULL,
-    "rank" TEXT NOT NULL
+    "rank" INTEGER NOT NULL,
+    "domain" TEXT NOT NULL DEFAULT ''
 );
 
 -- CreateTable
-CREATE TABLE "Jounral" (
+CREATE TABLE "Journal" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "abbreviation" TEXT NOT NULL,
     "fullName" TEXT NOT NULL,
     "url" TEXT NOT NULL,
     "imapctFactor" REAL NOT NULL,
-    "rank" TEXT NOT NULL
+    "rank" INTEGER NOT NULL,
+    "domain" TEXT NOT NULL DEFAULT ''
 );

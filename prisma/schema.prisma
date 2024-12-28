@@ -16,14 +16,13 @@ datasource db {
 model Conference {
   id    Int     @id @default(autoincrement())
   abbreviation String
-  status String
   deadline DateTime
   meetingDate String
   address String
   fullName String
   url String
   publisher String
-  rank String
+  rank Int
   domain String @default("")
 }
 
@@ -33,6 +32,6 @@ model Journal {
   fullName String
   url String
   imapctFactor Float
-  rank String
+  rank Int
   domain String @default("")
 }
