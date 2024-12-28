@@ -5,13 +5,6 @@ import prisma from '@/lib/prisma';
 export default async function JournalTable() {
     const columns = [
         { name: '简称', key: 'abbreviation' },
-        { name: '全称', key: 'fullName' },
-        {
-            name: '主页链接',
-            key: 'url',
-            render: (value: string) => <a href={value} className="text-blue-500">{value}</a>,
-        },
-        { name: '影响因子', key: 'imapctFactor' },
         {
             name: '评级',
             key: 'rank',
@@ -20,6 +13,13 @@ export default async function JournalTable() {
                     {value}
                 </span>
             ),
+        },
+        { name: 'IF', key: 'imapctFactor' },
+        { name: '全称', key: 'fullName' },
+        {
+            name: '主页链接',
+            key: 'url',
+            render: (value: string) => <a href={value} className="text-blue-500">{value}</a>,
         },
     ];
   const journal = await prisma.journal.findMany();

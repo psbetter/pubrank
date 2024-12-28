@@ -15,12 +15,12 @@ interface TableProps {
 
 const Table: React.FC<TableProps> = ({ columns, data }) => {
     return (
-        <div className="shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg mt-6 flow-root">
+        <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 rounded-lg flow-root">
             <div id='table_scrollbar' className="rounded-lg overflow-x-auto">
                 <div className="inline-block min-w-full align-middle">
-                    <div className="overflow-hidden">
-                        <table className="min-w-full divide-y divide-gray-300">
-                            <thead className="bg-gray-50">
+                    <div>
+                        <table className="relative min-w-full divide-y divide-gray-300">
+                            <thead className="sticky top-0 bg-gray-50 z-10">
                                 <tr>
                                     {columns.map((col, index) => (
                                         <th
@@ -32,7 +32,7 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
                                     ))}
                                 </tr>
                             </thead>
-                            <tbody className="divide-y divide-gray-200 bg-white">
+                            <tbody className="h-80 divide-y divide-gray-200 bg-white overflow-y-auto">
                                 {data.map((item, rowIndex) => (
                                     <tr key={rowIndex}>
                                         {columns.map((col, colIndex) => (

@@ -6,7 +6,17 @@ import dayjs from 'dayjs';
 
 export default async function ConferenceTable() {
     const columns = [
-        { name: '简称', key: 'abbreviation' },
+        { name: '简称', key: 'abbreviation', fixed: 'left' },
+        {
+            name: '评级',
+            key: 'rank',
+            fixed: 'right',
+            render: (value: string) => (
+                <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                    {value}
+                </span>
+            ),
+        },
         {
             name: '状态',
             key: 'status',
@@ -36,16 +46,7 @@ export default async function ConferenceTable() {
             key: 'url',
             render: (value: string) => <a href={value} className="text-blue-500">{value}</a>,
         },
-        { name: '出版商', key: 'publisher' },
-        {
-            name: '评级',
-            key: 'rank',
-            render: (value: string) => (
-                <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
-                    {value}
-                </span>
-            ),
-        },
+        { name: '出版商', key: 'publisher' }
     ];
     const conference = await prisma.conference.findMany();
 

@@ -3,8 +3,8 @@ import React from 'react';
 const Footer: React.FC = () => {
     
   return (
-    <footer className="mt-12 text-center h-8">
-      <div className="flex justify-center space-x-4 tracking-tight">
+    <footer className="bottom-0 w-full text-center h-24">
+      <div className="flex justify-center">
           <div
             className="text-sm text-gray-400"
           >
