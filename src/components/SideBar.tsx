@@ -20,7 +20,7 @@ const SiderBar: React.FC<SiderBarProps> = ({tabs}) => {
     
   return (
     <div className="h-full w-16 flex flex-col bg-gray-200 rounded-lg transition p-2">
-        <nav className="flex flex-col gap-y-2" aria-orientation="vertical">
+        <nav className="flex flex-col gap-y-2" role="navigation" aria-orientation="vertical">
             {tabs.map((tab, tabIdx) => (
                 <button key={tabIdx}
                     type="button"

@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({tabs}) => {
   return (
     <div className="w-full flex">
         <div className="w-full h-12 flex bg-gray-100 rounded-lg transition p-1">
-            <nav className="flex gap-x-1" aria-orientation="horizontal">
+            <nav className="flex gap-x-1" role="navigation" aria-orientation="horizontal">
                 {tabs.map((tab, tabIdx) => (
                     <button key={tabIdx}
                         type="button"

@@ -3,16 +3,26 @@ import { useState } from 'react'
 import { CheckIcon } from '@heroicons/react/20/solid'
 import { classNames } from '@/utils/condition_class'
 
+type Tier = {
+  name: string;
+  id: string;
+  href: string;
+  price: string[];
+  description: string;
+  features: string[];
+  mostPopular: boolean;
+};
+
 const frequencies = [
-  { value: 'monthly', label: '包月', priceSuffix: '/月' },
-  { value: 'annually', label: '包年', priceSuffix: '/年' },
+  { value: 0, label: '包月', priceSuffix: '/月' },
+  { value: 1, label: '包年', priceSuffix: '/年' },
 ]
-const tiers = [
+const tiers: Tier[] = [
   {
     name: '个人',
     id: 'tier-freelancer',
     href: '#',
-    price: { monthly: '￥15', annually: '￥144' },
+    price: [ '￥15', '￥144' ],
     description: 'The essentials to provide your best work for clients.',
     features: ['5 products', 'Up to 1,000 subscribers', 'Basic analytics', '48-hour support response time'],
     mostPopular: false,
@@ -21,7 +31,7 @@ const tiers = [
     name: '团队',
     id: 'tier-startup',
     href: '#',
-    price: { monthly: '￥30', annually: '￥288' },
+    price: ['￥30', '￥288' ],
     description: 'A plan that scales with your rapidly growing business.',
     features: [
       '25 products',
@@ -36,7 +46,7 @@ const tiers = [
     name: '企业',
     id: 'tier-enterprise',
     href: '#',
-    price: { monthly: '￥60', annually: '￥576' },
+    price: ['￥60', '￥576' ],
     description: 'Dedicated support and infrastructure for your company.',
     features: [
       'Unlimited products',
@@ -64,7 +74,7 @@ export default function PricingPage() {
         <div className="mt-6 flex justify-center">
             <div className="flex">
                 <div className="h-10 flex bg-gray-100 rounded-lg transition p-1">
-                    <nav className="flex gap-x-1" aria-orientation="horizontal">
+                    <nav className="flex gap-x-1" role="navigation" aria-orientation="horizontal">
                         {frequencies.map((freq, freqIdx) => (
                             <button key={freqIdx}
                                 type="button"
