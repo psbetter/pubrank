@@ -100,6 +100,10 @@ export default async function ConferenceTable() {
             status,  // 添加动态计算的 status 字段
         };
     });
-    return <Table columns={columns} data={conferenceData} />;
+    return (
+      <div className='w-3/4 h-[500px] overflow-auto'>
+        <Table columns={columns} data={conferenceData} />
+      </div>
+    );
 };
 
