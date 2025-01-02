@@ -16,7 +16,7 @@ export default function FrontLayout({
     <div className="w-4/5 min-h-screen flex flex-col gap-y-2 bg-white text-gray-900 py-1">
         <Banner />
         <Header tabs={tabs}/>
-        <div className="grow w-full">
+        <div className="grow w-full border rounded-lg">
             {children}
         </div>
         <Footer />

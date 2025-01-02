@@ -19,7 +19,8 @@ export default async function ConferenceList() {
     ]
 
     const conference = await prisma.conference.findMany();
-    const conferenceData = conference.map((item: any) => {
+    const conferenceSorted = conference.sort((a, b) => a.rank - b.rank);
+    const conferenceData = conferenceSorted.map((item: any) => {
         const deadline = dayjs(item.deadline);
         const today = dayjs();
         let status = { id: 2, label: '未开始投稿' };  // 默认状态为 '未开始'
@@ -36,7 +37,7 @@ export default async function ConferenceList() {
         };
     });
   return (
-    <ul role="list" className="divide-y divide-gray-100">
+    <ul role="list" className="divide-y divide-gray-100 px-5">
       {conferenceData.map((item, idx) => (
         <li key={idx} className="flex items-center justify-between gap-x-6 py-5">
           <div className="min-w-0">

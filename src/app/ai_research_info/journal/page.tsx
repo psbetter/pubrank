@@ -12,9 +12,10 @@ export default async function JournalTable() {
         "bg-rose-50 text-rose-400 ring-rose-600/20"
     ]
     const journal = await prisma.journal.findMany(); 
+    const journalSorted = journal.sort((a, b) => a.rank - b.rank);
     return (
-        <ul role="list" className="divide-y divide-gray-100">
-          {journal.map((item, idx) => (
+        <ul role="list" className="divide-y divide-gray-100 px-5">
+          {journalSorted.map((item, idx) => (
             <li key={idx} className="flex items-center justify-between gap-x-6 py-5">
               <div className="min-w-0">
                 <div className="flex items-start gap-x-3">
