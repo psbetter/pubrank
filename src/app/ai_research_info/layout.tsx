@@ -10,7 +10,7 @@ export default function FrontLayout({
   const tabs = [
     { id: "1", name: '会议', href: '/ai_research_info/conference' },
     { id: "2", name: '期刊', href: '/ai_research_info/journal' },
-    { id: "3", name: '订阅服务', href: '/ai_research_info/subscribe' },
+    // { id: "3", name: '订阅服务', href: '/ai_research_info/subscribe' },
   ]
   return (
     <div className="w-4/5 min-h-screen flex flex-col gap-y-2 bg-white text-gray-900 py-1">

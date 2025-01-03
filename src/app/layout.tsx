@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pubrank",
+  title: "osome",
   description: "Research information",
 };
 

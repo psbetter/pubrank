@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
           <div
             className="text-sm text-gray-400"
           >
-            Copyright © 2024.
+            <a href='http://beian.miit.gov.cn/'>湘ICP备2025099676号</a>
           </div>
       </div>
     </footer>
