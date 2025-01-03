@@ -35,3 +35,9 @@ model Journal {
   rank Int
   domain String @default("")
 }
+
+model Banner {
+  id    Int     @id @default(autoincrement())
+  content String
+  show Boolean @default(false)
+}

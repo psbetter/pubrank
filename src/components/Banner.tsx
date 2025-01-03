@@ -2,8 +2,19 @@
 import { useState } from 'react'
 import { XMarkIcon } from '@heroicons/react/20/solid'
 
-export default function Banner() {
-  const [isVisible, setIsVisible] = useState(true)
+export interface bannerContent {
+  id: string; 
+  content: string;
+  show: boolean;
+}
+
+interface BannerProps {
+  banner: bannerContent
+}
+
+const Banner: React.FC<BannerProps> = ({banner}) =>  {
+  
+  const [isVisible, setIsVisible] = useState(banner.show)
 
   const handleDismiss = () => {
     setIsVisible(false)
@@ -15,13 +26,7 @@ export default function Banner() {
     <div className="w-full">
       <div className="flex items-center justify-between gap-x-6 bg-blue-100 px-6 py-2.5 rounded-lg sm:py-3 sm:pl-4 sm:pr-3.5">
         <p className="flex items-center text-sm leading-6 text-blue-800">
-          <a href="https://cvpr.thecvf.com/Conferences/2025/CallForPapers">
-            <strong className="font-semibold">CVPR 2025</strong>
-            <svg viewBox="0 0 2 2" className="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
-              <circle cx={1} cy={1} r={1} />
-            </svg>
-            会议时间：2025年6月10日-2025年6月17日&nbsp;<span aria-hidden="true">去看看&rarr;</span>
-          </a>
+          {banner.content}
         </p>
         <button
           type="button"
@@ -35,3 +40,5 @@ export default function Banner() {
     </div>
   )
 }
+
+export default Banner;

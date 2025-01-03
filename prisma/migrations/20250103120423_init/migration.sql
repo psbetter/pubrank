@@ -22,3 +22,10 @@ CREATE TABLE "Journal" (
     "rank" INTEGER NOT NULL,
     "domain" TEXT NOT NULL DEFAULT ''
 );
+
+-- CreateTable
+CREATE TABLE "Banner" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "content" TEXT NOT NULL,
+    "show" BOOLEAN NOT NULL DEFAULT false
+);
